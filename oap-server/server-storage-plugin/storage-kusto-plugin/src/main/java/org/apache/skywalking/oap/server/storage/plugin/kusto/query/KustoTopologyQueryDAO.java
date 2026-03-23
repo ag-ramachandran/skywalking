@@ -1,0 +1,97 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+package org.apache.skywalking.oap.server.storage.plugin.kusto.query;
+
+import org.apache.skywalking.oap.server.storage.plugin.kusto.KustoClient;
+
+import java.io.IOException;
+import java.util.List;
+import org.apache.skywalking.oap.server.core.query.input.Duration;
+import org.apache.skywalking.oap.server.core.query.type.Call;
+import org.apache.skywalking.oap.server.core.storage.query.ITopologyQueryDAO;
+
+public class KustoTopologyQueryDAO implements ITopologyQueryDAO {
+    private final KustoClient kustoClient;
+
+    public KustoTopologyQueryDAO(final KustoClient kustoClient) {
+        this.kustoClient = kustoClient;
+    }
+
+    @Override
+    public List<Call.CallDetail> loadServiceRelationsDetectedAtServerSide(Duration duration,
+                                                                          List<String> serviceIds) throws IOException {
+        throw new UnsupportedOperationException(
+            "TODO: Implement Kusto loadServiceRelationsDetectedAtServerSide with serviceIds");
+    }
+
+    @Override
+    public List<Call.CallDetail> loadServiceRelationDetectedAtClientSide(Duration duration,
+                                                                         List<String> serviceIds) throws IOException {
+        throw new UnsupportedOperationException(
+            "TODO: Implement Kusto loadServiceRelationDetectedAtClientSide with serviceIds");
+    }
+
+    @Override
+    public List<Call.CallDetail> loadServiceRelationsDetectedAtServerSide(Duration duration) throws IOException {
+        throw new UnsupportedOperationException(
+            "TODO: Implement Kusto loadServiceRelationsDetectedAtServerSide global");
+    }
+
+    @Override
+    public List<Call.CallDetail> loadServiceRelationDetectedAtClientSide(Duration duration) throws IOException {
+        throw new UnsupportedOperationException(
+            "TODO: Implement Kusto loadServiceRelationDetectedAtClientSide global");
+    }
+
+    @Override
+    public List<Call.CallDetail> loadInstanceRelationDetectedAtServerSide(String clientServiceId,
+                                                                          String serverServiceId,
+                                                                          Duration duration) throws IOException {
+        throw new UnsupportedOperationException(
+            "TODO: Implement Kusto loadInstanceRelationDetectedAtServerSide");
+    }
+
+    @Override
+    public List<Call.CallDetail> loadInstanceRelationDetectedAtClientSide(String clientServiceId,
+                                                                          String serverServiceId,
+                                                                          Duration duration) throws IOException {
+        throw new UnsupportedOperationException(
+            "TODO: Implement Kusto loadInstanceRelationDetectedAtClientSide");
+    }
+
+    @Override
+    public List<Call.CallDetail> loadEndpointRelation(Duration duration,
+                                                      String destEndpointId) throws IOException {
+        throw new UnsupportedOperationException("TODO: Implement Kusto loadEndpointRelation");
+    }
+
+    @Override
+    public List<Call.CallDetail> loadProcessRelationDetectedAtClientSide(String serviceInstanceId,
+                                                                         Duration duration) throws IOException {
+        throw new UnsupportedOperationException(
+            "TODO: Implement Kusto loadProcessRelationDetectedAtClientSide");
+    }
+
+    @Override
+    public List<Call.CallDetail> loadProcessRelationDetectedAtServerSide(String serviceInstanceId,
+                                                                         Duration duration) throws IOException {
+        throw new UnsupportedOperationException(
+            "TODO: Implement Kusto loadProcessRelationDetectedAtServerSide");
+    }
+}
